@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .recommendation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .recommendation-item {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Recommended Exercises</h1>
+
+        {% if recommendations %}
+            <ul class="recommendation-list">
+                {% for rec in recommendations %}
+                    <li class="recommendation-item">{{ rec }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No recommendations available at the moment. Please try again later.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
